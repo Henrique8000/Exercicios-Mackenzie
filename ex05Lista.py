@@ -4,63 +4,35 @@ pessoas. Construa uma lista de mesmo tamanho com o índice de massa corporal de 
 (IMC). IMC = peso/(altura)2
 """
 
+listaPeso = []
+listaAltura = []
+lista_imc = []
+n_pessoa = 1
 
-def main():
-    peso1 = float(input("Digite o peso da 1a pessoa: "))
-    altura1 = float(input("Digite a altura da 1a pessoa: "))
 
-    peso2 = float(input("\nDigite o peso da 2a pessoa: "))
-    altura2 = float(input("Digite a altura da 2a pessoa: "))
-
-    peso3 = float(input("\nDigite o peso da 3a pessoa: "))
-    altura3 = float(input("Digite a altura da 3a pessoa: "))
-
-    peso4 = float(input("\nDigite o peso da 4a pessoa: "))
-    altura4 = float(input("Digite a altura da 4a pessoa: "))
-
-    peso5 = float(input("\nDigite o peso da 5a pessoa: "))
-    altura5 = float(input("Digite a altura da 5a pessoa: "))
+for i in range(5):
+    listaPeso.append(float(input(f"Digite o peso da {n_pessoa}a pessoa: ")))
+    listaAltura.append(float(input(f"Digite a altura da {n_pessoa}a pessoa: ")))
     print()
+    n_pessoa += 1
 
-    listaPeso = [peso1, peso2, peso3, peso4, peso5]
-    listaAltura = [altura1, altura2, altura3, altura4, altura5]
+for indice in range(len(listaPeso)):
 
-    imc1 = 0.0
-    imc2 = 0.0
-    imc3 = 0.0
-    imc4 = 0.0
-    imc5 = 0.0
+    if indice == 0:
+        lista_imc.append(listaPeso[indice] / (listaAltura[indice] ** 2))
 
-    liImc = calcula_imc(listaPeso, listaAltura)
-    exibe_imc(liImc, listaPeso, listaAltura)
+    elif indice == 1:
+        lista_imc.append(listaPeso[indice] / (listaAltura[indice] ** 2))
 
+    elif indice == 2:
+        lista_imc.append(listaPeso[indice] / (listaAltura[indice] ** 2))
 
-def calcula_imc(listaPeso, listaAltura):
-    for indice in range(len(listaPeso)):
+    elif indice == 3:
+        lista_imc.append(listaPeso[indice] / (listaAltura[indice] ** 2))
 
-        if indice == 0:
-            imc1 = listaPeso[indice] / (listaAltura[indice] ** 2)
-
-        elif indice == 1:
-            imc2 = listaPeso[indice] / (listaAltura[indice] ** 2)
-
-        elif indice == 2:
-            imc3 = listaPeso[indice] / (listaAltura[indice] ** 2)
-
-        elif indice == 3:
-            imc4 = listaPeso[indice] / (listaAltura[indice] ** 2)
-
-        elif indice == 4:
-            imc5 = listaPeso[indice] / (listaAltura[indice] ** 2)
-
-    listaImc = [imc1, imc2, imc3, imc4, imc5]
-
-    return listaImc
+    elif indice == 4:
+        lista_imc.append(listaPeso[indice] / (listaAltura[indice] ** 2))
 
 
-def exibe_imc(listaImc, listaPeso, listaAltura):
-    for i in range(len(listaImc)):
-        print(f"{i+1}a pessoa: peso = {listaPeso[i]:.1f}, altura = {listaAltura[i]:.2f} e imc = {listaImc[i]:.2f}")
-
-
-main()
+for i in range(len(lista_imc)):
+    print(f"{i+1}a pessoa: peso = {listaPeso[i]:.1f}, altura = {listaAltura[i]:.2f} e imc = {lista_imc[i]:.2f}")
